@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Block Domain</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        min-width: 333px;
+        padding: 16px;
+        background-color: #f4f4f4;
+      }
+      h2 {
+        margin-top: 0;
+        font-size: 18px;
+      }
+      input[type="text"] {
+        width: calc(100% - 60px);
+        padding: 6px;
+        margin-right: 4px;
+        font-size: 14px;
+      }
+      button {
+        padding: 6px 12px;
+        font-size: 14px;
+        cursor: pointer;
+        border: none;
+        background-color: #007bff;
+        color: white;
+        border-radius: 4px;
+      }
+      ul {
+        list-style-type: none;
+        padding: 0;
+        margin-top: 10px;
+      }
+      li {
+        background: white;
+        padding: 6px 10px;
+        margin-bottom: 6px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-radius: 4px;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+      }
+      .remove-btn {
+        background-color: #dc3545;
+        border: none;
+        color: white;
+        padding: 4px 8px;
+        border-radius: 4px;
+        font-size: 12px;
+      }
+      .input-group {
+        display: flex;
+        gap: 8px;
+        margin-bottom: 12px;
+      }
+
+      .input-group input[type="text"] {
+        flex: 1;
+        padding: 6px 10px;
+        font-size: 14px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+
+      .input-group button {
+        padding: 6px 14px;
+        font-size: 14px;
+        background-color: #007bff;
+        border: none;
+        color: white;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Block Domain</h2>
+    <div class="input-group">
+      <input
+        type="text"
+        id="domainInput"
+        placeholder="example.com not https://example.com"
+      />
+      <button id="blockBtn">Block</button>
+    </div>
+
+    <h2>Blocked Domains</h2>
+    <ul id="blockedList"></ul>
+
+    <script src="popup.js"></script>
+  </body>
+</html>
