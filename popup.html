@@ -7,51 +7,15 @@
       body {
         font-family: Arial, sans-serif;
         min-width: 333px;
-        padding: 16px;
+        padding: 10x;
         background-color: #f4f4f4;
       }
+
       h2 {
         margin-top: 0;
         font-size: 18px;
       }
-      input[type="text"] {
-        width: calc(100% - 60px);
-        padding: 6px;
-        margin-right: 4px;
-        font-size: 14px;
-      }
-      button {
-        padding: 6px 12px;
-        font-size: 14px;
-        cursor: pointer;
-        border: none;
-        background-color: #007bff;
-        color: white;
-        border-radius: 4px;
-      }
-      ul {
-        list-style-type: none;
-        padding: 0;
-        margin-top: 10px;
-      }
-      li {
-        background: white;
-        padding: 6px 10px;
-        margin-bottom: 6px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        border-radius: 4px;
-        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-      }
-      .remove-btn {
-        background-color: #dc3545;
-        border: none;
-        color: white;
-        padding: 4px 8px;
-        border-radius: 4px;
-        font-size: 12px;
-      }
+
       .input-group {
         display: flex;
         gap: 8px;
@@ -60,7 +24,7 @@
 
       .input-group input[type="text"] {
         flex: 1;
-        padding: 6px 10px;
+        padding: 3px 10px;
         font-size: 14px;
         border: 1px solid #ccc;
         border-radius: 4px;
@@ -75,6 +39,42 @@
         border-radius: 4px;
         cursor: pointer;
       }
+
+      ul {
+        list-style-type: none;
+        padding: 0;
+        margin-top: 10px;
+        max-height: 243px;
+        overflow-y: auto;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        background-color: white;
+      }
+
+      li {
+        padding: 6px 10px;
+        border-bottom: 1px solid #eee;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      li:last-child {
+        border-bottom: none;
+      }
+
+      .remove-btn {
+        background: none;
+        border: none;
+        color: red;
+        font-size: 16px;
+        cursor: pointer;
+        font-weight: bold;
+      }
+
+      .remove-btn:hover {
+        color: darkred;
+      }
     </style>
   </head>
   <body>
@@ -83,7 +83,7 @@
       <input
         type="text"
         id="domainInput"
-        placeholder="example.com not https://example.com"
+        placeholder="example.com or https://example.com"
       />
       <button id="blockBtn">Block</button>
     </div>

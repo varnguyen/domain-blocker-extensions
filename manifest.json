@@ -2,10 +2,14 @@
   "manifest_version": 3,
   "name": "Domain Blocker - Dynamic",
   "version": "1.0",
+  "description": "An extension that allows you to block custom domains flexibly and easily.",
   "permissions": ["declarativeNetRequest", "storage"],
   "host_permissions": ["<all_urls>"],
   "action": {
     "default_popup": "popup.html"
+  },
+  "background": {
+    "service_worker": "background.js"
   },
   "icons": {
     "16": "icon_16x16.png",
