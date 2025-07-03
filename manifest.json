@@ -3,7 +3,7 @@
   "name": "Domain Blocker - Dynamic",
   "version": "1.0",
   "description": "An extension that allows you to block custom domains flexibly and easily.",
-  "permissions": ["declarativeNetRequest", "storage"],
+  "permissions": ["declarativeNetRequest", "storage", "scripting", "tabs"],
   "host_permissions": ["<all_urls>"],
   "action": {
     "default_popup": "popup.html"
