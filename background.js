@@ -65,31 +65,31 @@ chrome.runtime.onStartup.addListener(() => {
   initializeBlockingRules();
 });
 
-// ✅ Thêm đoạn này để chặn window.open tự động
-chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
-  if (changeInfo.status === "loading") {
-    chrome.scripting.executeScript({
-      target: { tabId, allFrames: true },
-      world: "MAIN", // Inject vào ngữ cảnh thật của trang web
-      func: () => {
-        const originalOpen = window.open;
-        window.open = function (...args) {
-          const isTrusted = window.event?.isTrusted ?? false;
+// // ✅ Thêm đoạn này để chặn window.open tự động
+// chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
+//   if (changeInfo.status === "loading") {
+//     chrome.scripting.executeScript({
+//       target: { tabId, allFrames: true },
+//       world: "MAIN", // Inject vào ngữ cảnh thật của trang web
+//       func: () => {
+//         const originalOpen = window.open;
+//         window.open = function (...args) {
+//           const isTrusted = window.event?.isTrusted ?? false;
 
-          if (!isTrusted) {
-            alert(
-              `🚫 Một popup đã bị chặn:\n\nDomain: ${args[0] || "Không rõ URL"}`
-            );
-            console.warn("[PopupBlocker] Blocked popup:", args);
+//           if (!isTrusted) {
+//             alert(
+//               `🚫 Một popup đã bị chặn:\n\nDomain: ${args[0] || "Không rõ URL"}`
+//             );
+//             console.warn("[PopupBlocker] Blocked popup:", args);
 
-            return null;
-          }
+//             return null;
+//           }
 
-          return originalOpen.apply(this, args);
-        };
+//           return originalOpen.apply(this, args);
+//         };
 
-        console.log("[PopupBlocker] window.open overridden in MAIN world");
-      },
-    });
-  }
-});
+//         console.log("[PopupBlocker] window.open overridden in MAIN world");
+//       },
+//     });
+//   }
+// });
